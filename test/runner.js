@@ -41,7 +41,7 @@ describe('pixi-touch suite', function() {
         sprite.height = 100;
         stage.addChild(sprite);
         sprite.interactive = true;
-        sprite.tap = function() { console.log('test'); };
+        sprite.on('tap', function() { console.log('test'); });
         renderer.render(stage);
 
         var animate = function() {

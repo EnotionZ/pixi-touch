@@ -1,21 +1,44 @@
 /*global PIXI*/
+'use strict';
 
 (function() {
 
-    PIXI.DisplayObject.prototype.tap = function(e) {
+    function _gestureStart(e) {
+        console.log('gesture start', e);
+    }
+
+    function _gestureMove(e) {
+        console.log('gesture move', e);
+    }
+
+    function _gestureEnd(e) {
+        console.log('gesture end', e);
+    }
+
+
+    var proto = PIXI.DisplayObject.prototype;
+
+    proto.tap = function(e) {
         this.trigger('tap', e);
     };
 
-    PIXI.DisplayObject.prototype.touchstart = function(e) {
+    proto.click = function(e) {
+        this.trigger('click', e);
+    };
+
+    proto.touchstart = function(e) {
+        _gestureStart.call(this, e);
         this.trigger('touchstart', e);
     };
 
-    PIXI.DisplayObject.prototype.touchmove = function(e) {
+    proto.touchmove = function(e) {
+        _gestureMove.call(this, e);
         this.trigger('touchmove', e);
     };
 
-    PIXI.DisplayObject.prototype.touchend = function(e) {
+    proto.touchend = function(e) {
+        _gestureEnd.call(this, e);
         this.trigger('touchend', e);
     };
 
-}).call(this);
+})();
