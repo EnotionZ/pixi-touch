@@ -2,6 +2,10 @@
 
 (function() {
 
+    PIXI.DisplayObject.prototype.tap = function(e) {
+        this.trigger('tap', e);
+    };
+
     PIXI.DisplayObject.prototype.touchstart = function(e) {
         this.trigger('touchstart', e);
     };
