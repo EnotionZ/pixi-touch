@@ -1,0 +1,11 @@
+{
+    "name": "pixi-touch",
+    "version": "0.0.1",
+    "description": "better touch events and event system for pixi.js",
+    "author": "Dominick Pham",
+    "license": "MIT",
+    "licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
+    "devDependencies": {
+        "pixi.js": "~2.2.7"
+    }
+}
